@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    font-family: "Ubuntu", sans-serif;
+    background-color: #1a1a1a;
+    color: aliceblue;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./background.jpg) no-repeat center center/cover;
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+}
+
+/* MESSAGE STYLING */
+
+#notifications {
+    position: fixed;
+    top: 10%;
+    right: 1%;
+    /* background-color: green; */
+}
+
+.toast {
+    padding: 0.5em 1em 1em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.3em;
+    width: 100%;
+    border-radius: 5px;
+    color: #0abf30;
+    animation: show 0.3s ease-in-out 1 forwards;
+    margin-bottom: 1em;
+}
+
+@keyframes show {
+    0% {transform: translateX(100%);}
+    40%{transform: translateX(-5%);}
+    80%{transform: translateX(0%);}
+    100%{transform: translateX(-10%);}
+}
+
+.fa-xmark{
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.toast i:nth-child(3){
+    color: #fff;
+    opacity: 0.6;
+}
+
+.toast::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    animation: timeOut 5s linear 1 forwards;
+}
+
+@keyframes timeOut {
+    to {
+        width: 0;
+    }
+}
+
+.toast-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.success {
+    background-image: linear-gradient(to right, #0abf3055, #22242f 30%);
+}
+
+.success::before {
+    background-color: #0abf30;
+}
+
+.success i {
+    color: #0abf30;
+}
+
+.alert {
+    background-image: linear-gradient(to right, #e9bd0c55, #22242f 30%);
+}
+
+.alert::before {
+    background-color: #e9bd0c;
+}
+
+.alert i {
+    color: #e9bd0c;
+}
+
+.warning {
+    background-image: linear-gradient(to right, #e24d4c55, #22242f 30%);
+}
+
+.warning::before {
+    background-color: #f24d4c;
+}
+
+.warning i {
+    color: #f24d4c;
+}
+
+.content {
+    color: #ddd;
+}
+
+.content p {
+    font-size: 0.9rem;
+}
+
+/* HEADER STYLING */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding-top: 1em;
+}
+
+#logo {
+    width: 7%;
+    filter: invert();
+}
+
+.h-title {
+    font-size: 3rem;
+}
+
+.h-title span {
+    color: #fcba28;
+}
+
+/* MAIN CONTAINER STYLING */
+
+main {
+    padding-bottom: 4em;
+}
+
+.container {
+    margin: 2em 2em;
+    max-width: 70vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 2em auto 0;
+    max-width: 70vw;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 0.3em;
+    font-weight: 600;
+}
+
+input {
+    padding: 1em;
+    margin-bottom: 1.5em;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 7px;
+    border: none;
+    background: #ddd;
+}
+
+input:active,
+input:focus
+ {
+    border: none;
+    outline: none;
+}
+
+#submit {
+    background-color: #fcba28;
+    padding: 1em 2em;
+    align-self: flex-start;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 1px;
+    transition: all 0.3s;
+}
+
+#submit:hover, 
+#submit:focus {
+    background-color: silver;
+    outline: none;
+}
+
+#submit:active {
+    transform: scale(0.9);
+}
+
+/* MOVIES LIST CONTAINER STYLING */
+
+.movies-list-container{
+    margin: 0 1em;
+}
+
+#data-table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 3em;
+    box-shadow: inset 10px 0 10px -5px rgba(0, 0, 0, 0.3),
+                inset -10px 0 10px -5px rgba(0, 0, 0, 0.3) ;
+}
+
+#data-table thead {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#data-table th {
+    font-weight: 600;
+    padding: 1em;
+}
+
+#data-table td {
+    padding: 0.7em;
+    border-bottom: 1px solid #ddd;
+}
+
+#data-table tr, #data-table th {
+    border-bottom: 1px solid #ddd;
+    padding: 1em;
+}
+
+#data-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.delete-item {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.delete-item:hover,
+.delete-item:focus {
+    color: darkred;
+}
+
