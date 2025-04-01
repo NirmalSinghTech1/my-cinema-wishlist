@@ -263,3 +263,14 @@ input:focus
     color: darkred;
 }
 
+@media (max-width: 550px){
+    .h-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .h-title {
+        font-size: 2rem;
+    }
+}
