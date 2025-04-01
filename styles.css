@@ -267,6 +267,14 @@ input:focus
     .h-title {
         font-size: 2.5rem;
     }
+
+    .movies-list-container{
+        margin: 0;
+    }
+    
+    .container {
+        max-width: 85vw;
+    }
 }
 
 @media (max-width: 450px) {
